@@ -1,0 +1,28 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <title>History</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="{% static 'history.css' %}" />
+</head>
+<body>
+  <table>
+    <tr>
+      <th>Operand1</th>
+      <th>Operator</th>
+      <th>Operand2</th>
+      <th>Result</th>
+    </tr>
+    {% for calculation in calculations %}
+      <tr>
+        <td>{{ calculation.operand1 }}</td>
+        <td>{{ calculation.operator }}</td>
+        <td>{{ calculation.operand2 }}</td>
+        <td>{{ calculation.results }}</td>
+      </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
